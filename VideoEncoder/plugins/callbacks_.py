@@ -212,13 +212,23 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
         elif cb.data == "triggerResolution":
             r = await db.get_resolution(cb.from_user.id)
             if r == 'OG':
+                await db.set_resolution(cb.from_user.id, resolution='4320')
+            elif r == '4320':
+                await db.set_resolution(cb.from_user.id, resolution='2160')
+            elif r == '2160':
+                await db.set_resolution(cb.from_user.id, resolution='1440')
+            elif r == '1440':
                 await db.set_resolution(cb.from_user.id, resolution='1080')
             elif r == '1080':
                 await db.set_resolution(cb.from_user.id, resolution='720')
             elif r == '720':
+                await db.set_resolution(cb.from_user.id, resolution='540')
+            elif r == '540':
                 await db.set_resolution(cb.from_user.id, resolution='480')
             elif r == '480':
-                await db.set_resolution(cb.from_user.id, resolution='576')
+                await db.set_resolution(cb.from_user.id, resolution='360')
+            elif r == '360':
+                await db.set_resolution(cb.from_user.id, resolution='240')
             else:
                 await db.set_resolution(cb.from_user.id, resolution='OG')
             await VideoSettings(cb.message, user_id=cb.from_user.id)

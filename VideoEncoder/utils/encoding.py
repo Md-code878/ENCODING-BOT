@@ -243,14 +243,26 @@ async def encode(filepath, message, msg, audio_map=None):
     w = await db.get_watermark(message.from_user.id)
     if r == 'OG':
         watermark = ''
+    elif r == '4320':
+        watermark = '-vf scale=7680:4320'
+    elif r == '2160':
+        watermark = '-vf scale=3840:2160'
+    elif r == '1440':
+        watermark = '-vf scale=2560:1440'
     elif r == '1080':
         watermark = '-vf scale=1920:1080'
     elif r == '720':
         watermark = '-vf scale=1280:720'
-    elif r == '576':
-        watermark = '-vf scale=768:576'
+    elif r == '540':
+        watermark = '-vf scale=960:540'
+    elif r == '480':
+        watermark = '-vf scale=854:480'
+    elif r == '360':
+        watermark = '-vf scale=640:360'
+    elif r == '240':
+        watermark = '-vf scale=426:240'
     else:
-        watermark = '-vf scale=852:480'
+        watermark = '-vf scale=854:480'
     if w:
         if r == 'OG':
             watermark += '-vf '

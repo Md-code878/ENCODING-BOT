@@ -100,22 +100,26 @@ async def settings_viewer(bot: Client, event: Message):
     r = await db.get_resolution(user_id)
     if r == 'OG':
         res = 'Source'
+    elif r == '4320':
+        res = '𝟴𝗞'
+    elif r == '2160':
+        res = '𝟰𝗞'
+    elif r == '1440':
+        res = '𝟮𝗞'
     elif r == '1080':
         res = '𝟷𝟶𝟾𝟶𝙿'
     elif r == '720':
         res = '𝟽𝟸𝟶𝙿'
-    elif r == '480':
-        res = '𝟺𝟾𝟶𝙿'
     elif r == '540':
         res = '𝟻𝟺𝟶𝙿'
+    elif r == '480':
+        res = '𝟺𝟾𝟶𝙿'
     elif r == '360':
         res = '𝟹𝟼𝟶𝙿'
     elif r == '240':
         res = '𝟸𝟺𝟶𝙿'
-    elif r == '1440':
-        res = '𝟮𝗞'
     else:
-        res = '𝟰𝗞'
+        res = 'Source'
     
     # Extension
     ex = await db.get_extensions(user_id)
