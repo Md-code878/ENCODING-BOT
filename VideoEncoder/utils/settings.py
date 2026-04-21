@@ -89,14 +89,26 @@ async def VideoSettings(event: Message, user_id: int):
         r = await db.get_resolution(user_id)
         if r == 'OG':
             res = 'Source'
+        elif r == '4320':
+            res = '8K'
+        elif r == '2160':
+            res = '4K'
+        elif r == '1440':
+            res = '2K'
         elif r == '1080':
             res = '1080p'
         elif r == '720':
             res = '720p'
         elif r == '576':
             res = '576p'
+        elif r == '540':
+            res = '540p'
         elif r == '480':
             res = '480p'
+        elif r == '360':
+            res = '360p'
+        elif r == '240':
+            res = '240p'
         else:
             res = 'Source'
 

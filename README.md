@@ -14,7 +14,7 @@ A powerful Telegram bot for compressing, encoding, and manipulating video files.
   - Custom **CRF** (Constant Rate Factor).
   - **Presets** (UltraFast to VerySlow).
   - **10-bit** encoding support.
-- **Resolution**: Downscale videos to 1080p, 720p, 540p, 480p, 360p, or keep original.
+- **Resolution**: Upscale and downscale videos to 8K, 4K, 2K, 1080p, 720p, 540p, 480p, 360p, 240p, or keep original.
 - **Audio**: 
   - Change audio codecs (AAC, AC3, OPUS, MP3, etc.).
   - Custom bitrate and sample rates.
